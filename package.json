@@ -1,0 +1,13 @@
+{
+  "name": "palestra-ftd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "cd app && ng serve",
+    "electron:build": "cd app && ng build && cd .. && electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
