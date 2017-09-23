@@ -1,13 +1,18 @@
 {
   "name": "palestra-ftd",
   "version": "1.0.0",
-  "description": "",
+  "description": "Workshop apresentado na FTD, no qual foi falado sobre o Electron.",
   "main": "main.js",
   "scripts": {
-    "start": "cd app && ng serve",
-    "electron:build": "cd app && ng build && cd .. && electron .",
+    "start": "cd app && npm install && ng serve",
+    "start:electron": "cd app && npm install && ng build && cd .. && electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Adler Coelho Santos <eu@adlercoelho.com.br>",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.4.3",
+    "@angular/compiler-cli": "^4.4.3",
+    "electron": "^1.7.6"
+  }
 }
