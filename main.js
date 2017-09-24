@@ -1,31 +1,30 @@
 const electron = require('electron');
-const { app, BrowserWindow, net } = electron;
+const { app, BrowserWindow } = electron;
 const args = process.argv.slice(1);
-
-const fs = require("fs");
 
 let win, develop;
 
 develop = args.some(val => val === "--develop");
 
 app.on('ready', () => {
-    createElectronWindow();
+    createMainElectronWindow();
 });
 
-let createElectronWindow = () => {
+// Criando janela principal do App
+let createMainElectronWindow = () => {
     let electronScreen = electron.screen;
     let size = electronScreen.getPrimaryDisplay().workAreaSize;
 
-    // criando a janela do electron
     win = new BrowserWindow({
         x: 0,
         y: 0,
         width: size.width,
-        height: size.height
+        height: size.height,
+        title: "Aplicação Angular dentro do Electron",
+        fullscreen: true
     });
 
     let url = `file://${__dirname}/index.html`;
-    console.log(url);
     win.loadURL(url);
 
     if (develop) {
@@ -54,6 +53,6 @@ app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
-        createWindow();
+        createMainElectronWindow();
     }
 });
