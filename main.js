@@ -6,7 +6,7 @@ let win, develop, platform = process.platform;
 
 develop = args.some(val => val === "--develop");
 
-console.log(`[Platform] 🖥  minha plataforma:  ${platform}.`); // darwin, win e lin
+console.log(`[Platform] 🖥  minha plataforma:  ${platform}.`); // darwin, win32 e linux
 
 console.log(`[Version] ⚙️  Versão do Electron: ${process.versions.electron}.`);
 console.log(`[Version] ⚙️  Versão do NodeJS: ${process.versions.node}.`);

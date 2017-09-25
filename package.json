@@ -6,6 +6,10 @@
   "scripts": {
     "start": "cd app && npm install && ng serve",
     "start:electron": "cd app && npm install && ng build && cd .. && electron . --develop true",
+    "build:mac": "node ./build/electron-packager.js --develop false --asar --platform=darwin --arch=x64 --icon=./src/assets/icons/mac/logotipo.icns",
+    "build:linux": "node ./build/electron-packager.js --asar --platform=linux --arch=x64",
+    "build:windows": "node ./build/electron-packager.js --asar --platform=win32 --arch=x64",
+    "build:all": "node ./build/electron-packager.js --asar --overwrite --platform=all --arch=all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adler Coelho Santos <eu@adlercoelho.com.br>",
@@ -13,6 +17,8 @@
   "devDependencies": {
     "@angular/cli": "^1.4.3",
     "@angular/compiler-cli": "^4.4.3",
-    "electron": "^1.7.6"
+    "electron": "^1.7.6",
+    "electron-packager": "^9.1.0",
+    "minimist": "^1.2.0"
   }
 }
