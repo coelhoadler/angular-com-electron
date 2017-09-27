@@ -1,4 +1,4 @@
-const electron = require('electron')
+﻿const electron = require('electron')
 ,   { app, BrowserWindow } = electron
 ,   args = process.argv.slice(1);
 
@@ -23,8 +23,7 @@ function createMainElectronWindow() {
         width: size.width,
         height: size.height,
         title: "Aplicação Angular dentro do Electron",
-        fullscreen: true,
-        show: false
+        fullscreen: true
     });
 
     win.loadURL(`file://${__dirname}/index.html`);
